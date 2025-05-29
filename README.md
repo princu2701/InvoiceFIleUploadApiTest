@@ -1,48 +1,44 @@
-# Indus Electricity Board - Invoice File Upload API Testing
+# ⚡ Indus Invoice Upload API Testing
 
-This project automates API testing for an enterprise-level electricity board system undergoing digital transformation. The goal is to verify that when an invoice PDF is uploaded via a backend API, the system successfully extracts and returns accurate billing data such as `Account Number`, `Invoice Number`, etc.
-
----
-
-## 📌 Project Overview
-
-**Project Name:** `Indus`  
-**Domain:** Electricity Distribution Board  
-**Objective:** Automate validation of extracted data from uploaded invoice PDFs to replace manual entry processes  
-**Testing Role:** API test automation focused on backend file processing  
-**Environment:** Real-time enterprise backend, active in production/testing phases  
+Welcome to the API test automation project for **Indus Electricity Board**, a real-time enterprise initiative aiming to **digitize invoice processing**. This project ensures accurate extraction of billing data from uploaded PDFs using backend REST APIs.
 
 ---
 
-## ⚙️ Tech Stack
+## 🎯 Project Purpose
 
-- **Language:** Java
-- **Testing Library:** RestAssured
-- **Test Framework:** TestNG
-- **Build Tool:** Maven
-- **IDE:** IntelliJ IDEA
-- **Data Handling:** JSON response parsing via `JsonPath`
-- **File I/O:** Invoice PDFs for upload testing
+> ✅ **Transforming manual electricity invoice workflows into automated, digital pipelines**
 
----
+This test suite verifies that when a Discom or Circle uploads a PDF invoice, the system correctly extracts fields like:
 
-## 🔒 API Endpoint & Authentication
+- 🔢 `Account Number`
+- 📄 `Invoice Number`
+- 📆 `Billing Date`
+- 💰 `Invoice Amount`
 
-> 🚫 For confidentiality reasons, actual API endpoints and authentication keys are **anonymized**.  
-> These are proprietary to the enterprise project and not publicly shareable.
+It’s part of Indus' broader effort to modernize utility operations.
 
 ---
 
-## 🧪 What This Test Does
+## 🧰 Tech Stack
 
-- Uploads real electricity invoice PDFs (Discom-wise or Circle-wise) to the backend API
-- Parses the JSON response and extracts specific fields like `AccountNo_1`
-- Verifies extracted values using assertions or manual printouts for comparison
-- Ensures the system extracts data consistently and accurately after switching from manual to digital processing
+| Tool         | Purpose                     |
+|--------------|-----------------------------|
+| **Java**     | Core language               |
+| **RestAssured** | API test automation     |
+| **TestNG**   | Test framework              |
+| **Maven**    | Build and dependency manager|
+| **IntelliJ** | Primary IDE                 |
 
 ---
 
-## 📂 Project Structure
+## 🔒 Security & Data Privacy
+
+🚫 **All API endpoints and credentials are anonymized** to protect enterprise confidentiality.  
+⚠️ Invoice file samples are proprietary and accessed through internal Indus systems.
+
+---
+
+## 📂 Folder Structure
 
 ```
 Indus_API_Testing/
@@ -52,42 +48,38 @@ Indus_API_Testing/
     └── test/
         └── java/
             ├── FiltestingPacakge/
-            │   └── NoidaPowerDelhi.java         # Example test class for Noida Power Discom
+            │   └── NoidaPowerDelhi.java
             └── CircleTesting/
-                └── NorthDelhiCircleTest.java    # Circle-based retesting class
+                └── NorthDelhiCircleTest.java
 ```
 
-> 📁 You’ll need to have access to internal folders containing the invoice PDFs:
+> 🗂️ PDFs are sourced internally, e.g.:
 > `D:\Indus Tower\Invoices 500\Delhi\Delhi\Noida Power Company Limited\...`
 
 ---
 
-## 🚀 How to Run This Project
+## 🚀 How to Run
 
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/yourusername/Indus_API_Testing.git
-   cd Indus_API_Testing
    ```
 
-2. **Open in IntelliJ IDEA**
+2. **Open in IntelliJ**  
+   File → Open → Select `pom.xml` to load Maven structure
 
-3. **Add as a Maven project** using the provided `pom.xml`
+3. **Update file paths** inside test classes for PDF locations
 
-4. **Download/Place the required invoice PDFs** at the appropriate file paths provided by the enterprise team (Indus system folders)
-
-5. **Update the test file path** in the Java test class (e.g., `NoidaPowerDelhi.java`) as per your local machine setup.
-
-6. **Run tests**:
-   - Directly from IntelliJ via right-click → Run
-   - Or use the Maven command line:
+4. **Run tests** via:
+   - IntelliJ test runner (Right-click → Run)
+   - or command line:
      ```bash
      mvn clean test
      ```
 
 ---
 
-## 📋 Sample Assertion Logic
+## 🧪 Sample Validation Logic
 
 ```java
 String accounts = response.jsonPath().getString("data.AccountNo_1");
@@ -101,32 +93,35 @@ if ("2000057674".equals(accounts != null ? accounts.trim() : "")) {
 
 ---
 
-## 📌 Status of the Project
+## 🛠 Current Status
 
-- ✅ Test scripts created for multiple Discoms and Circles
-- 🧪 Currently testing file uploads with real PDF samples
-- 📤 Manual and automated validations ongoing
-- 💡 Jenkins integration not required as per current enterprise scope
-
----
-
-## 📈 Future Enhancements (Planned/Optional)
-
-- Parameterize test data via Excel or JSON files
-- Batch file upload testing
-- Extract and validate multiple fields from the API response
-- Optional Jenkins CI setup for scheduled testing
+- ✅ Working test classes for multiple Discoms
+- ✅ Retesting structure by Circle names
+- ✅ Field-level validations
+- 🔧 Actively under development
 
 ---
 
-## 🛡️ Disclaimer
+## 🔮 Planned Enhancements
 
-> This is an **internal project** developed as part of a live enterprise system.  
-> All data, URLs, and credentials are protected and **not publicly shared** to comply with company policy.
+- 📊 Excel-based test parameterization
+- 🔁 Loop-based batch file upload testing
+- 🔍 Add validations for multiple fields (`GST`, `Invoice Date`, etc.)
+- ⚙️ Optional Jenkins CI integration (currently out of scope)
 
 ---
 
-## 🤝 Contributions
+## 🙋 About the Author
 
-This repository is intended for internal demonstration and validation purposes. External contributions are currently restricted.
+This API test suite was developed as part of an **enterprise backend validation effort**, led during the **mid-phase of development** to support quality assurance and onboarding of new automation methods.
 
+---
+
+## ⚠️ Disclaimer
+
+This repository contains code and logic related to internal systems.  
+All data, endpoints, and business logic are masked or anonymized in public-facing documentation.
+
+---
+
+📢 **Feel free to fork or star for structure reference** — contributions are restricted for internal usage.
