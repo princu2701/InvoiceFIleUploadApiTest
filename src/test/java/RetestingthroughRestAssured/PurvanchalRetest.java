@@ -20,7 +20,7 @@ public class PurvanchalRetest {
         Response response = given().multiPart("file", file).header("API-Key", "a07f9a07-d992-44ee-aaaa-04876716c423").when().post().then().statusCode(200).extract().response();
 
         System.out.println(response.asPrettyString());
-        System.out.println("EnegyCharge Values are: "+response.jsonPath().getString("data.EnergyCharges_1"));
+        System.out.println("EnergyCharge Values are: "+response.jsonPath().getString("data.EnergyCharges_1"));
 
     }
 }
