@@ -124,4 +124,13 @@ All data, endpoints, and business logic are masked or anonymized in public-facin
 
 ---
 
-📢 **Feel free to fork or star for structure reference** — contributions are restricted for internal usage.
+## 🙏 Thank You
+
+Thanks for visiting this project!  
+If you found this useful or insightful, feel free to:
+
+- ⭐ Star this repo for reference  
+- 👀 [Explore more of my work](https://github.com/princu2701) on GitHub  
+- 🛠️ Check out other automation or API testing repositories on my profile  
+
+Happy testing! 🚀
