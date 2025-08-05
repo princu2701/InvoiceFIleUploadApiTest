@@ -62,7 +62,7 @@ Indus_API_Testing/
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/Indus_API_Testing.git
+   git clone https://github.com/princu2701/Indus_API_Testing.git
    ```
 
 2. **Open in IntelliJ**  
